@@ -7,4 +7,45 @@ function getUsers () { //executando fetch ou seja a api
     .catch(error => console.error(error)) // se der erro no api, ele mostrara no http
 }
 
+function getUser() {
+    fetch(`${url}/1`)
+    .then(response => response. json())
+    .then(data => {
+        userName.textContent = data.name 
+        userCity.textContent = data.city
+        userAvatar.src = data.avatar 
+    })
+    .catch(error => console.error(error))
+}
+
+
+// Como fazer um Post atravez do fetch
+/*
+function addUser(newUser) {
+fetch(url, { // Data padrao 
+    method: "POST",
+    body: JSON.stringify(newUser),
+    headers: {
+       "Content-type": "application/json; charsert=UTF-8" 
+    }
+})
+.then(response => response.json())
+.then(data => alertApi.textContent = data)
+.catch(error => console.error(error))
+}
+
+const newUser = { //Criando um novo usuario
+    name: "Lucas", // dados da api // id automatico
+    avatar: "https://picsum.photos/200/300",
+    city: "Rio do Sul"
+}
+
+addUser(newUser)
+*/
+
+
+
 getUsers()
+getUser()
+
+
